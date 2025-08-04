@@ -93,9 +93,13 @@
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
     const colors = ['#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe', '#60a5fa', '#93c5fd', '#eff6ff', '#eff6ff'];
 
-    // Imagen para corazones con imagen
+    // Imagen para corazones que suben
     const heartImg = new Image();
-    heartImg.src = "tokito.png"; // Cambia esta ruta si es necesario
+    heartImg.src = "tokito.png"; // Cambia si está en otra ruta
+
+    // Imagen para partículas que bajan
+    const heartImg2 = new Image();
+    heartImg2.src = "tokito2.png";
 
     document.addEventListener('DOMContentLoaded', function () {
       const audio = document.getElementById('audio-control');
@@ -177,10 +181,11 @@
     // Partículas y fuegos artificiales
     let particles = [];
     const hearts = [];
+    const heartsDown = []; // Nueva array para partículas que bajan
     const fireworks = [];
 
     function createHeart() {
-      const useImage = Math.random() < 0.3; // 30% de que sea imagen
+      const useImage = Math.random() < 0.3; // 30% imagen arriba
       hearts.push({
         x: Math.random() * canvas.width,
         y: canvas.height + 20,
@@ -188,6 +193,19 @@
         speed: 1 + Math.random() * 1.5,
         opacity: 0.5 + Math.random() * 0.5,
         img: useImage ? heartImg : null,
+      });
+    }
+
+    // Nueva función para crear corazones que bajan con la 2da imagen o corazones normales
+    function createHeartDown() {
+      const useImage = Math.random() < 0.3; // 30% imagen abajo
+      heartsDown.push({
+        x: Math.random() * canvas.width,
+        y: -20,
+        size: 24 + Math.random() * 20,
+        speed: 1 + Math.random() * 1.5,
+        opacity: 0.5 + Math.random() * 0.5,
+        img: useImage ? heartImg2 : null,
       });
     }
 
@@ -204,6 +222,21 @@
         h.y -= h.speed;
         if (h.y < -50) hearts.splice(index, 1);
       });
+
+      // Dibujar partículas que bajan
+      heartsDown.forEach((h, index) => {
+        ctx.globalAlpha = h.opacity;
+        if (h.img) {
+          ctx.drawImage(h.img, h.x - h.size / 2, h.y - h.size / 2, h.size, h.size);
+        } else {
+          ctx.font = `${h.size}px monospace`;
+          ctx.fillStyle = "#3b82f6";
+          ctx.fillText("❤", h.x, h.y);
+        }
+        h.y += h.speed;
+        if (h.y > canvas.height + 50) heartsDown.splice(index, 1);
+      });
+
       ctx.globalAlpha = 1;
     }
 
@@ -271,7 +304,7 @@
       // Crear explosión en el punto de interacción
       createExplosion(x, y);
 
-      // Crear partículas de amor
+      // Crear partículas de amor (suben)
       const directions = [
         { x: 0, y: -1 },
         { x: 0, y: 1 },
@@ -337,7 +370,12 @@
       drawHearts();
       drawFireworks();
 
+      // Corazones que suben (30% con imagen)
       if (Math.random() > 0.95) createHeart();
+      // Corazones que bajan (30% con imagen)
+      if (Math.random() > 0.98) createHeartDown();
+
+      // Fuegos artificiales
       if (Math.random() > 0.98) createFirework();
 
       requestAnimationFrame(animate);
