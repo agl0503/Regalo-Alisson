@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- saved from url=(0036)https://amiuddd.github.io/T34M0R0SA/ -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Lluvia Gigante de Amor</title>
   <style>
@@ -70,13 +70,13 @@
       z-index: -1;
     }
   </style>
-</head>
+<style type="text/css" id="operaUserStyle"></style><style type="text/css"></style></head>
 <body>
-<canvas id="canvas"></canvas>
+<canvas id="canvas" width="1236" height="598"></canvas>
 <div class="overlay">
   <div class="center-message">Alisson💙</div>
 </div>
-<img id="cursor" class="heart-cursor" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmY2OWI0IiBkPSJNNDcuNiAyNUMyNS4[...]">
+<img id="cursor" class="heart-cursor" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmY2OWI0IiBkPSJNNDcuNiAyNUMyNS4xIDI1IDcgNDMuMSA3IDY1LjZDNyA4OC4xIDI0LjMgMTI3IDkzLjUgMTU3LjVjNjkuMiAzMC41IDE0Ni4zIDY0LjEgMTYxLjUgODQuMSAxNS4yLTIwIDEwMC4xLTUzLjYgMTY5LjMtODQuMSA2OS4yLTMwLjUgODYuNS02OS40IDg2LjUtOTEuOSAwLTIyLjUtMTguMS00MC42LTQwLjYtNDAuNnMtNDAuNiAxOC4xLTQwLjYgNDAuNmMwIDguMSAxLjYgMTUuNSA0LjMgMjIuMi0zLjEgMi4yLTYuNyAzLjUtMTAuNyAzLjUtMTMuOCAwLTI1LTExLjItMjUtMjVzMTEuMi0yNSAyNS0yNWM4LjEgMCAxNS41IDMuOSAyMC4yIDEwLjIgMTEuNy0xNS4yIDE4LjgtMzQuMiAxODgtNTUuMiAwLTQ1LjktMzcuMi04My4xLTgzLjEtODMuMXMtODMuMSAzNy4yLTgzLjEgODMuMWMwIDE2LjMgNC43IDMxLjUgMTIuOCA0NC4zLTEuMiAxLjEtMi42IDIuMS00LjEgMi45LTE0LjMgNy44LTI2IDE0LjktMzYuMiAyMC4yQzEwOS4zIDEyMS41IDQ3LjYgODguMSA0Ny42IDY1LjZzMTguMS00MC42IDQwLjYtNDAuNkMxMDkuMyAyNSA3NyA0My4xIDc3IDY1LjZzMzIuMyA0MC42IDMyLjMgNDAuNlMxNzAuMSAyNSA0Ny42IDI1eiIvPjwvc3ZnPg==" alt="heart" style="left: 82px; top: -16px; transform: scale(1.00362);">
 
 <audio id="audio-control" loop="">
   <source src="musica.mp3" type="audio/mpeg">
@@ -86,16 +86,17 @@
 <script>
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
   const colors = ['#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe', '#60a5fa', '#93c5fd', '#eff6ff', '#eff6ff'];
-  const blueColors = ['#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe', '#eff6ff'];
   
   document.addEventListener('DOMContentLoaded', function() {
     const audio = document.getElementById('audio-control');
+    
     function playAudio() {
       audio.volume = 0.8;
       audio.play().catch(error => {
         console.log('Error al reproducir audio:', error);
       });
     }
+    
     document.body.addEventListener(isTouchDevice ? 'touchstart' : 'click', function() {
       playAudio();
     });
@@ -147,8 +148,9 @@
       const y = drops[i] * baseFontSize;
       
       ctx.shadowColor = "rgba(59, 130, 246, 0.7)";
-      ctx.shadowBlur = 15;
+      ctx.shadowBlur = 15; // Aumentado el blur para mejor efecto
       ctx.fillText(text, x, y);
+      
       ctx.shadowBlur = 0;
       ctx.strokeStyle = "rgba(255, 255, 255, 0.3)";
       ctx.lineWidth = 2;
@@ -171,7 +173,7 @@
     hearts.push({
       x: Math.random() * canvas.width,
       y: canvas.height + 20,
-      size: 24 + Math.random() * 20,
+      size: 24 + Math.random() * 20, // Tamaño aumentado
       speed: 1 + Math.random() * 1.5,
       opacity: 0.5 + Math.random() * 0.5
     });
@@ -199,9 +201,9 @@
         dx: Math.cos(angle) * speed,
         dy: Math.sin(angle) * speed,
         alpha: 1,
-        color: blueColors[Math.floor(Math.random() * blueColors.length)],
+        color: colors[Math.floor(Math.random() * colors.length)],
         text: "TE AMO",
-        size: 24 + Math.random() * 20
+        size: 24 + Math.random() * 20 // Tamaño aumentado
       });
     }
   }
@@ -218,8 +220,8 @@
         dx: Math.cos(angle) * speed,
         dy: Math.sin(angle) * speed,
         alpha: 1,
-        color: blueColors[Math.floor(Math.random() * blueColors.length)],
-        size: 3 + Math.random() * 3
+        color: colors[Math.floor(Math.random() * colors.length)],
+        size: 3 + Math.random() * 3 // Tamaño aumentado
       });
     }
   }
@@ -247,13 +249,18 @@
   const handleInteraction = (e) => {
     const x = isTouchDevice ? e.touches[0].clientX : e.clientX;
     const y = isTouchDevice ? e.touches[0].clientY : e.clientY;
+    
+    // Crear explosión en el punto de interacción
     createExplosion(x, y);
+    
+    // Crear partículas de amor
     const directions = [
       {x: 0, y: -1},
       {x: 0, y: 1},
       {x: -1, y: 0},
       {x: 1, y: 0}
     ];
+    
     directions.forEach(dir => {
       particles.push({
         x: x,
@@ -261,10 +268,11 @@
         vx: dir.x * (3 + Math.random() * 2),
         vy: dir.y * (3 + Math.random() * 2),
         alpha: 1,
-        size: baseFontSize + Math.random() * 40,
-        color: blueColors[Math.floor(Math.random() * blueColors.length)]
+        size: baseFontSize + Math.random() * 40, // Tamaño aumentado
+        color: `#${Math.random() > 0.5 ? 'ff69b4' : 'ff007f'}`
       });
     });
+
     for (let i = 0; i < 16; i++) {
       particles.push({
         x: x,
@@ -272,8 +280,8 @@
         vx: (Math.random() - 0.5) * 6,
         vy: (Math.random() - 0.5) * 6,
         alpha: 1,
-        size: baseFontSize + Math.random() * 30,
-        color: blueColors[Math.floor(Math.random() * blueColors.length)]
+        size: baseFontSize + Math.random() * 30, // Tamaño aumentado
+        color: `#${Math.random() > 0.5 ? 'ff69b4' : 'ff007f'}`
       });
     }
   };
@@ -286,7 +294,7 @@
       ctx.font = `bold ${p.size}px monospace`;
       ctx.fillStyle = p.color;
       ctx.shadowColor = p.color;
-      ctx.shadowBlur = 20;
+      ctx.shadowBlur = 20; // Aumentado el blur
       ctx.fillText("TE AMO", p.x, p.y);
       ctx.shadowBlur = 0;
       p.x += p.vx;
@@ -304,8 +312,11 @@
     drawParticles();
     drawHearts();
     drawFireworks();
+    
+    // Crear corazones y fuegos artificiales aleatorios
     if (Math.random() > 0.95) createHeart();
     if (Math.random() > 0.98) createFirework();
+    
     requestAnimationFrame(animate);
   }
 
@@ -319,5 +330,6 @@
     drops.fill(1);
   });
 </script>
-</body>
-</html>
+
+
+</body></html>
