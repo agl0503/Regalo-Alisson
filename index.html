@@ -33,11 +33,11 @@
     }
     .center-message {
       font-family: 'Courier New', monospace;
-      color: #3b82f6;
+      color: #a855f7;
       font-size: 6rem;
       text-align: center;
       opacity: 0.8;
-      text-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
+      text-shadow: 0 0 10px rgba(168, 85, 247, 0.7);
       animation: pulse 3s infinite;
     }
     @keyframes pulse {
@@ -62,7 +62,7 @@
       z-index: 9999;
       pointer-events: none;
       transition: transform 0.1s ease;
-      filter: drop-shadow(0 0 4px #3b82f6);
+      filter: drop-shadow(0 0 4px #a855f7);
     }
     #audio-control {
       position: absolute;
@@ -72,16 +72,15 @@
   </style>
 </head>
 <body>
-  <canvas id="canvas" width="1236" height="598"></canvas>
+  <canvas id="canvas"></canvas>
   <div class="overlay">
-    <div class="center-message">💙Alisson💙</div>
+    <div class="center-message">💜Feliz Día Shirley💜</div>
   </div>
   <img
     id="cursor"
     class="heart-cursor"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmY2OWI0IiBkPSJNNDcuNiAyNUMyNS4xIDI1IDcgNDMuMSA3IDY1LjZDNyA4OC4xIDI0LjMgMTI3IDkzLjUgMTU3LjVjNjkuMiAzMC41IDE0Ni4zIDY0LjEgMTYxLjUgODQuMSAxNS4yLTIwIDEwMC4xLTUzLjYgMTY5LjMtODQuMSA2OS4yLTMwLjUgODYuNS02OS40IDg2LjUtOTEuOSAwLTIyLjUtMTguMS00MC42LTQwLjYtNDAuNnMtNDAuNiAxOC4xLTQwLjYgNDAuNmMwIDguMSAxLjYgMTUuNSA0LjMgMjIuMi0zLjEgMi4yLTYuNyAzLjUtMTAuNyAzLjUtMTMuOCAwLTI1LTExLjItMjUtMjVzMTEuMi0yNSAyNS0yNWM4LjEgMCAxNS41IDMuOSAyMC4yIDEwLjIgMTEuNy0xNS4yIDE4LjgtMzQuMiAxODgtNTUuMiAwLTQ1LjktMzcuMi04My4xLTgzLjEtODMuMXMtODMuMSAzNy4yLTgzLjEgODMuMWMwIDE2LjMgNC43IDMxLjUgMTIuOCA0NC4zLTEuMiAxLjEtMi42IDIuMS00LjEgMi45LTE0LjMgNy44LTI2IDE0LjktMzYuMiAyMC4yQzEwOS4zIDEyMS41IDQ3LjYgODguMSA0Ny42IDY1LjZzMTguMS00MC42IDQwLjYtNDAuNkMxMDkuMyAyNSA3NyA0My4xIDc3IDY1LjZzMzIuMyA0MC42IDMyLjMgNDAuNlMxNzAuMSAyNSA0Ny42IDI1eiIvPjwvc3ZnPg=="
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjYTg1NWY3IiBkPSJNNDcuNiAyNUMyNS4xIDI1IDcgNDMuMSA3IDY1LjZDNyA4OC4xIDI0LjMgMTI3IDkzLjUgMTU3LjVjNjkuMiAzMC41IDE0Ni4zIDY0LjEgMTYxLjUgODQuMSAxNS4yLTIwIDEwMC4xLTUzLjYgMTY5LjMtODQuMSA2OS4yLTMwLjUgODYuNS02OS40IDg2LjUtOTEuOSAwLTIyLjUtMTguMS00MC42LTQwLjYtNDAuNnMtNDAuNiAxOC4xLTQwLjYgNDAuNmMwIDguMSAxLjYgMTUuNSA0LjMgMjIuMi0zLjEgMi4yLTYuNyAzLjUtMTAuNyAzLjUtMTMuOCAwLTI1LTExLjItMjUtMjVzMTEuMi0yNSAyNS0yNWM4LjEgMCAxNS41IDMuOSAyMC4yIDEwLjIgMTEuNy0xNS4yIDE4LjgtMzQuMiAxODgtNTUuMiAwLTQ1LjktMzcuMi04My4xLTgzLjEtODMuMXMtODMuMSAzNy4yLTgzLjEgODMuMWMwIDE2LjMgNC43IDMxLjUgMTIuOCA0NC4zLTEuMiAxLjEtMi42IDIuMS00LjEgMi45LTE0LjMgNy44LTI2IDE0LjktMzYuMiAyMC4yQzEwOS4zIDEyMS41IDQ3LjYgODguMSA0Ny42IDY1LjZzMTguMS00MC42IDQwLjYtNDAuNkMxMDkuMyAyNSA3NyA0My4xIDc3IDY1LjZzMzIuMyA0MC42IDMyLjMgNDAuNlMxNzAuMSAyNSA0Ny42IDI1eiIvPjwvc3ZnPg=="
     alt="heart"
-    style="left: 82px; top: -16px; transform: scale(1.00362)"
   />
 
   <audio id="audio-control" loop>
@@ -91,22 +90,19 @@
 
   <script>
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
-    const colors = ['#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe', '#60a5fa', '#93c5fd', '#eff6ff', '#eff6ff'];
+    const colors = ['#9333ea', '#a855f7', '#c084fc', '#e9d5ff', '#a855f7', '#c084fc', '#e9d5ff', '#e9d5ff'];
 
-    // Imagen para corazones con imagen
     const heartImg = new Image();
-    heartImg.src = "tokito.png"; // Cambia esta ruta si es necesario
+    heartImg.src = "tokito.png";
 
     document.addEventListener('DOMContentLoaded', function () {
       const audio = document.getElementById('audio-control');
-
       function playAudio() {
         audio.volume = 0.8;
         audio.play().catch((error) => {
           console.log('Error al reproducir audio:', error);
         });
       }
-
       document.body.addEventListener(isTouchDevice ? 'touchstart' : 'click', function () {
         playAudio();
       });
@@ -126,11 +122,9 @@
         cursor.style.top = `${e.clientY - 16}px`;
         cursor.style.transform = `scale(${1 + Math.sin(Date.now() / 300) * 0.05})`;
       });
-
       document.addEventListener('mousedown', () => {
         cursor.style.transform = 'scale(0.8)';
       });
-
       document.addEventListener('mouseup', () => {
         cursor.style.transform = 'scale(1.1)';
         setTimeout(() => {
@@ -139,48 +133,38 @@
       });
     }
 
-    // Efecto Matrix de amor - TAMAÑO AUMENTADO
     const text = "TE AMO";
-    const baseFontSize = isTouchDevice ? 36 : 64; // Tamaño de fuente aumentado
-    const fontSizeMultiplier = isTouchDevice ? 2.5 : 3; // Multiplicador aumentado
-    const columns = Math.floor(canvas.width / (baseFontSize * 1.5)); // Ajuste de columnas
+    const baseFontSize = isTouchDevice ? 36 : 64;
+    const columns = Math.floor(canvas.width / (baseFontSize * 1.5));
     const drops = new Array(columns).fill(1);
-
     ctx.font = `bold ${baseFontSize}px monospace`;
 
     function drawMatrix() {
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = "#3b82f6";
+      ctx.fillStyle = "#a855f7";
       for (let i = 0; i < drops.length; i++) {
         const x = i * baseFontSize * 1.5;
         const y = drops[i] * baseFontSize;
-
-        ctx.shadowColor = "rgba(59, 130, 246, 0.7)";
-        ctx.shadowBlur = 15; // Aumentado el blur para mejor efecto
+        ctx.shadowColor = "rgba(168, 85, 247, 0.7)";
+        ctx.shadowBlur = 15;
         ctx.fillText(text, x, y);
-
         ctx.shadowBlur = 0;
         ctx.strokeStyle = "rgba(255, 255, 255, 0.3)";
         ctx.lineWidth = 2;
         ctx.strokeText(text, x, y);
         ctx.fillText(text, x, y);
-
-        if (y > canvas.height && Math.random() > 0.992) {
-          drops[i] = 0;
-        }
+        if (y > canvas.height && Math.random() > 0.992) drops[i] = 0;
         drops[i] += 0.3;
       }
     }
 
-    // Partículas y fuegos artificiales
     let particles = [];
     const hearts = [];
     const fireworks = [];
 
     function createHeart() {
-      const useImage = Math.random() < 0.3; // 30% de que sea imagen
+      const useImage = Math.random() < 0.3;
       hearts.push({
         x: Math.random() * canvas.width,
         y: canvas.height + 20,
@@ -198,7 +182,7 @@
           ctx.drawImage(h.img, h.x - h.size / 2, h.y - h.size / 2, h.size, h.size);
         } else {
           ctx.font = `${h.size}px monospace`;
-          ctx.fillStyle = "#3b82f6";
+          ctx.fillStyle = "#a855f7";
           ctx.fillText("❤", h.x, h.y);
         }
         h.y -= h.speed;
@@ -267,18 +251,13 @@
     const handleInteraction = (e) => {
       const x = isTouchDevice ? e.touches[0].clientX : e.clientX;
       const y = isTouchDevice ? e.touches[0].clientY : e.clientY;
-
-      // Crear explosión en el punto de interacción
       createExplosion(x, y);
-
-      // Crear partículas de amor
       const directions = [
         { x: 0, y: -1 },
         { x: 0, y: 1 },
         { x: -1, y: 0 },
         { x: 1, y: 0 },
       ];
-
       directions.forEach((dir) => {
         particles.push({
           x: x,
@@ -291,7 +270,6 @@
           img: null,
         });
       });
-
       for (let i = 0; i < 16; i++) {
         particles.push({
           x: x,
@@ -324,9 +302,7 @@
         p.x += p.vx;
         p.y += p.vy;
         p.alpha -= 0.005;
-        if (p.alpha <= 0) {
-          particles.splice(index, 1);
-        }
+        if (p.alpha <= 0) particles.splice(index, 1);
       });
       ctx.globalAlpha = 1;
     }
@@ -336,10 +312,8 @@
       drawParticles();
       drawHearts();
       drawFireworks();
-
       if (Math.random() > 0.95) createHeart();
       if (Math.random() > 0.98) createFirework();
-
       requestAnimationFrame(animate);
     }
 
